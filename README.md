@@ -124,8 +124,6 @@ For partners who ask: *"Show me the data."*
 |--------|------|---------|
 | **1. Clinical Impact Chart** | [`docs/assets/rejue_vs_shaoyin_comparison.png`](docs/assets/rejue_vs_shaoyin_comparison.png) | 热厥 vs 少阴 V-λ 对比图 — "哪个阈值先破？" |
 | **2. Single-Case Trajectory** | [`docs/assets/case_study_rejue_trajectory.html`](docs/assets/case_study_rejue_trajectory.html) | 单病例HTML战场沙盘（ECharts四图+临床时间线） |
-| **3. Cold Outreach Templates** | [`docs/COLD_OUTREACH_TEMPLATES.md`](docs/COLD_OUTREACH_TEMPLATES.md) | 4封冷启动邮件模板（技术集成/医院部署/初创/学术） |
-
 > **Open `case_study_rejue_trajectory.html` in any browser — zero dependencies, self-contained ECharts CDN.**
 > The trajectory shows Re Jue detected 12 hours before SOFA≥2 increase, while lactate was still 2.2 mmol/L.
 
