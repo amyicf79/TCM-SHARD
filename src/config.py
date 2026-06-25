@@ -49,3 +49,19 @@ ANALYSIS_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 BOOTSTRAP_ITERS = 1000
 RANDOM_SEED = 42
 DEFAULT_SAMPLE_SIZE = 1000
+
+# ==================== v0.2.0 Pending Anchors (Placeholder) ====================
+# Xiao Ke (消渴, Diabetes Spectrum): E11* ICD mapping
+# Clinical rationale: High prevalence (13.6%) in unclassified MIMIC stays
+# Vector dimension: 12 (consistent with tcm_syndrome_matrix.csv)
+XIAOKE_VECTOR = [0.0] * 12  # Placeholder for v0.2.0 calibration
+XIAOKE_CODE = "xk_xy_zr"
+
+# Ni Du (溺毒, Renal Failure Spectrum): N17*/N18* ICD mapping
+# Clinical rationale: High prevalence (13.7%) in unclassified MIMIC stays
+# Vector dimension: 12 (consistent with tcm_syndrome_matrix.csv)
+NIDU_VECTOR = [0.0] * 12    # Placeholder for v0.2.0 calibration
+NIDU_CODE = "nd_zd_ny"
+
+# Future validation dataset path (external ICU data)
+EXTERNAL_VALIDATION_DIR = DATA_DIR / "external_validation"  # To be populated with domestic ICU data

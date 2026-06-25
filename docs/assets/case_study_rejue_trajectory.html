@@ -127,6 +127,15 @@
     </div>
   </div>
 
+  <!-- New: Five-Axis Syndrome Profile (Reserved for v0.2.0) -->
+  <div style="margin-top:40px;">
+    <h3>Five-Axis Syndrome Profile (Future Release)</h3>
+    <p style="color:#666;font-size:14px;">
+      Dynamic weights of the five diagnostic axes (Yin-Yang Ratio, Collapse Rate, Tan-Yu, Pi-Luo, Wei-Jing) for this Re Jue case. To be populated in v0.2.0.
+    </p>
+    <div id="five-axis-radar" style="width:100%;height:300px;"></div>
+  </div>
+
   <div class="timeline">
     <h3>Clinical Course — From Yangming to Re Jue</h3>
     <div class="event"><span class="time">T=0h</span><span class="desc">ICU admission. Diagnosis: CAP (社区获得性肺炎). Yangming stage — high V (0.88), high λ (0.82), Wei Qi intact (0.75). SOFA=4.</span></div>
@@ -268,6 +277,12 @@ Target',color:'#ff6b6b',fontSize:9}}] },
     ]
   });
 })();
+
+// Reserved function to load five-axis data in future releases
+function loadFiveAxisData() {
+  // Placeholder: Will return [w1, w2, w3, w4, w5] for Re Jue phenotype
+  return [0, 0, 0, 0, 0]; 
+}
 
 // Resize handler
 window.addEventListener('resize', function(){
