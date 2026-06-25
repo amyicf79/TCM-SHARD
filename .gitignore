@@ -46,3 +46,11 @@ Thumbs.db
 temp/
 tmp/
 notebooks/.ipynb_checkpoints/
+
+# Internal playbook — never commit
+docs/STEALTH_RESPONSE_PLAYBOOK.md
+
+# PCA Robustness — local only, never commit
+pca_robustness_trainer.py
+models/tcm_pca_model_robust.pkl
+models/pca_robustness_report.json
