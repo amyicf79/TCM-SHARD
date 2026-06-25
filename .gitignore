@@ -1,0 +1,48 @@
+# ========== Python ==========
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+
+# ========== TCM-SHARD Data ==========
+# Block all user-generated MIMIC-derived data (contains PHI)
+data/*.csv
+data/*.parquet
+data/*.json
+data/*.db
+!data/tcm_syndrome_matrix.csv
+!data/tcm_syndrome_matrix.json
+!data/validation/*.csv
+
+# Block intermediate caches
+chartevents_cache.json
+lab_cache_batch.json
+hadm_to_stay_id.json
+mimic_crude_map*.csv
+survival_output/  # Legacy output dir, now redirected to docs/
+
+# ========== Models ==========
+# Small pre-trained model is allowed; block large ones
+# models/*.pkl  # Uncomment if you want to exclude pkl
+
+# ========== Environment ==========
+.env
+.venv
+*.env.local
+
+# ========== OS & IDE ==========
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~
+
+# ========== Temporary Files ==========
+temp/
+tmp/
+notebooks/.ipynb_checkpoints/
