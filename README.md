@@ -2,6 +2,11 @@
 ### **S**yndromic **H**ierarchy **A**nalysis via **R**ule-based **D**ifferentiation
 *Bridging Critical Care Data and Traditional Chinese Medicine (TCM) Theory*
 
+[![Module-00](https://img.shields.io/badge/IXNO-Module--00_实证外壳-orange?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEyIDJMMiA3bDEwIDUgMTAtNS0xMC01ek0yIDE3bDEwIDUgMTAtNU0yIDEybDEwIDUgMTAtNSIvPjwvc3ZnPg==)](https://github.com/amyicf79/TCM-SHARD)
+[![IXNO Ecosystem](https://img.shields.io/badge/IXNO-Modular_Architecture-purple?style=flat-square)](https://github.com/amyicf79/TCM-SHARD#-ixno-modular-architecture)
+
+> **TCM-SHARD is Module-00 of the IXNO ecosystem**: an open empirical validation layer proving the efficacy of IXNO core modules (e.g., Field/Frame/Classifier). For licensing, collaboration, or access to core modules (aHR 2.30 for Heat Collapse detection), refer to the [IXNO Modular Architecture](#-ixno-modular-architecture) section below.
+
 ![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![MIMIC-III v1.4](https://img.shields.io/badge/MIMIC--III-v1.4-orange.svg)
@@ -189,6 +194,61 @@ If you use TCM-SHARD in your research, please cite:
   publisher = {Nature Publishing Group}
 }
 ```
+
+---
+
+## 🧩 IXNO Modular Architecture
+
+> **TCM-SHARD is Module-00** — the open "showroom sample" that proves IXNO core modules deliver clinical-grade results (aHR 2.30 for Heat Collapse). The core modules below are the production engines: closed-source, licensed, and commercially available.
+
+IXNO is **not a monolithic system** — it is a plug-and-play paradigm stack. Core "mother blocks" (Field/Frame) are closed-source and held by IXNO; other blocks can be sold individually, licensed per interface, or replaced entirely. **If someone wants to build a system with our blocks, they come to us for the adapter license.**
+
+### Module Map (L0 → L5)
+
+| Layer | Module | Alias | Function | License | Replaceable | Cooperation |
+|-------|--------|-------|----------|---------|-------------|-------------|
+| **L0** Operator | `IXNO-Field` | 场型引擎 | V-λ field evolution S(t), derivatives, 5-axis projection | 🔒 Closed | ❌ No | API-only, per-call/per-case pricing |
+| **L0** Operator | `IXNO-Frame` | 十一刀骨架 | Eleven-knife safety boundaries (示禁/药竭/识过 etc.) | 🔒 Closed | ❌ No | Bundled with Field license |
+| **L1** Diagnosis | `IXNO-Classifier` | 证型分类器 | 5-axis → syndrome output (Heat Collapse/Shaoyin etc.) | 🔒 Closed (encrypted params) | ❌ No | Standalone sub-modules (e.g., "Heat Collapse Alert") |
+| **L1** Diagnosis | `IXNO-Risk` | 风险导数 | dλ/dt, dV/dt risk slopes — 6-12h early warning | 🔒 Closed | ❌ No | Value-add bundle with Classifier |
+| **L2** Intervention | `IXNO-soul` | GA助理 | Candidate prescription enumeration + fitness scoring | 🟡 Interface open, impl closed | ✅ Yes | Partners can BYO soul (rule engine / LLM), must adapt Frame interface |
+| **L2** Intervention | `IXNO-Adjuster` | 剂量微调器 | Trend-aware dosage fine-tuning, Frame compliance layer | 🔒 Closed | ❌ No | Bundled with Frame license |
+| **L3** Delivery | `IXNO-scribe` | LLM秘书 | Medical documentation, patient education, dialogue | 🟢 Fully open | ✅ Yes | Partners use their own LLM (Spark/Huawei etc.), call scribe interface spec |
+| **L3** Delivery | `IXNO-Dashboard` | 临床看板 | Field state visualization, risk derivatives, syndrome trends | 🟡 Interface open, style customizable | ✅ Yes | Per-hospital customization, customization fee |
+| **L4** Validation | **`TCM-SHARD`** | **实证外壳** | 85k MIMIC mapping, Cox regression, KM curves — **this repo!** | 🟢 Fully open | ✅ Yes | Public GitHub — "sample in the shop window" |
+| **L5** Operations | `IXNO-Console` | 管控台 | Module authorization, parameter calibration, audit logs | 🔒 Closed | ❌ No | Internal only; partners request auth via console |
+
+### 🛡️ Security: Core Is Untouchable
+
+- **Field/Frame (Module-01/02) are binary-closed** — not even binaries are distributed, only API endpoints. Partners cannot see field equation coefficients, knife threshold parameters, or modify safety rules.
+- **Replaceable modules (soul/scribe) cannot bypass Frame** — even if a partner writes their own soul that prescribes toxic aconite overdose, Frame intercepts at the boundary. The Partner's violation, not IXNO liability.
+- **Parameter calibration is the moat** — field equation coefficients are not arbitrary; they were back-fitted from 85k prognostic outcomes. Partners who tune their own parameters will not achieve our aHR 2.30 validation results.
+
+### 💰 Commercial: They Can't Leave
+
+| Scenario | What They Buy | Pricing Model |
+|----------|---------------|---------------|
+| **iFlytek CDSS** | Module-03 (Classifier) + Module-02 (Frame) | Per-API-call + annual Frame license |
+| **Hospital sepsis alert** | Module-03 + Module-04 (Risk) | Per-alert case, embedded in HIS |
+| **Startup TCM prescription app** | Module-02 (Frame) for compliance | Revenue-share on app sales |
+| **Research institution** | Module-00 (TCM-SHARD) — already free! | Cite the paper |
+
+Even if a partner builds their own full system, they must return for core module authorization — **we hold parameter calibration authority**, and no independently tuned model can match our validation data.
+
+### 🌐 Ecosystem: They Want to Come
+
+IXNO publishes open interface specifications, allowing third parties to develop:
+- **soul** (prescription assistant) — bring your own formula library
+- **scribe** (LLM connector) — use your own language model
+- **Dashboard** (clinical panel) — per-hospital branding
+
+All third-party apps run on IXNO core modules. IXNO collects the **"base platform license fee"** — the more their apps succeed, the more IXNO earns.
+
+📖 **Full Technical Specification & Licensing**: [IXNO_MODULE_WHITEPAPER.md](docs/IXNO_MODULE_WHITEPAPER.md)
+
+### 📞 Licensing
+
+For module access, collaboration, or pricing: **amyicf79@gmail.com**
 
 ---
 
