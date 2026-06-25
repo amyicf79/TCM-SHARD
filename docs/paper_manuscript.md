@@ -1,6 +1,8 @@
-# TCM-Axiomatized ICU Prognostication: Decomposition of the Deficiency Axis (x₄) into Qi, Xue, Yin, Yang and the Dominance of Yang in Mortality Prediction
+# Unmasking Heat Collapse: A Rule-Based Septic-Shock Phenotyping Framework Using 85,242 MIMIC-III ICU Stays
 
-**A Retrospective Cohort Study Using the MIMIC-IV Database**
+**A Retrospective Cohort Study Using the MIMIC-III Database**
+
+> **Running title**: Rule-Based Septic-Shock Phenotyping — MIMIC-III Validation
 
 ---
 

@@ -1,9 +1,11 @@
 # TCM-SHARD
-### **S**yndromic **H**ierarchy **A**nalysis via **R**ule-based **D**ifferentiation
-*Bridging Critical Care Data and Traditional Chinese Medicine (TCM) Theory*
+### **R**ule-based **S**eptic-shock **P**henotyping via **H**ierarchical **A**nalysis of **R**egistry **D**ata
+*Bridging MIMIC-III Critical Care and TCM Syndrome Theory*
 
-[![Module-00](https://img.shields.io/badge/IXNO-Module--00_实证外壳-orange?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEyIDJMMiA3bDEwIDUgMTAtNS0xMC01ek0yIDE3bDEwIDUgMTAtNU0yIDEybDEwIDUgMTAtNSIvPjwvc3ZnPg==)](https://github.com/amyicf79/TCM-SHARD)
-[![IXNO Ecosystem](https://img.shields.io/badge/IXNO-Modular_Architecture-purple?style=flat-square)](https://github.com/amyicf79/TCM-SHARD#-ixno-modular-architecture)
+[![Septic Phenotyping](https://img.shields.io/badge/Topic-Septic%20Shock%20Phenotyping-orange.svg)](https://github.com/amyicf79/TCM-SHARD)
+[![MIMIC-III](https://img.shields.io/badge/Data-MIMIC--III%2085k-blue.svg)](https://physionet.org/content/mimiciii/1.4/)
+[![aHR](https://img.shields.io/badge/aHR-2.30%20(95%25CI%202.16--2.45)-red.svg)](https://github.com/amyicf79/TCM-SHARD#-results)
+[![TCM-SHARD](https://img.shields.io/badge/Brand-TCM--SHARD-green.svg)](https://github.com/amyicf79/TCM-SHARD)
 
 > **TCM-SHARD is Module-00 of the IXNO ecosystem**: an open empirical validation layer proving the efficacy of IXNO core modules (e.g., Field/Frame/Classifier). For licensing, collaboration, or access to core modules (aHR 2.30 for Heat Collapse detection), refer to the [IXNO Modular Architecture](#-ixno-modular-architecture) section below.
 
@@ -13,7 +15,7 @@
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)
 ![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)
 
-> **Key Finding**: We analyzed 85,242 ICU stays from the MIMIC-III database and identified a novel high-mortality phenotype—**Heat Collapse (Re Jue, 热厥)**—within patients previously conflated with "Yangming Syndrome". Heat Collapse carries a 32.5% mortality rate, with an adjusted hazard ratio (aHR) of 2.30 (95% CI 2.16–2.45) independent of age and sex, significantly exceeding Shaoyin Collapse (17.8%, aHR 1.37).
+> **Key Finding**: Analyzing 85,242 ICU stays from MIMIC-III, we identified a distinct high-mortality septic-shock subphenotype—**Heat Collapse (Re Jue, 热厥)**—within patients conventionally labeled "yangming-type". This subphenotype carried 32.5% mortality (adjusted HR 2.30, 95% CI 2.16–2.45), independent of age and sex, vs 17.8% (aHR 1.37) for non-vasoplegic shock (Shaoyin, 少阴). Rule-based mapping hit 61.4% with 63.3% manual agreement; ICD mining supports expanding to diabetic/kidney phenotypes.
 
 ---
 
@@ -116,16 +118,24 @@ python src/analysis/survival_analysis.py
 ---
 
 
-## 🎯 Negotiation Weapons ("谈判武器库")
+## 📊 Clinical Impact (Septic-Shock Subphenotyping)
 
-For partners who ask: *"Show me the data."*
+| Subphenotype (Western / TCM) | N | Mortality | aHR (95% CI) |
+|:---|:---|:---|:---|
+| **Heat Collapse (Re Jue, 热厥)** — vasoplegic septic shock | 6,374 | 32.5% | **2.30 (2.16–2.45)** |
+| **Shaoyin** (少阴) — non-vasoplegic / cardiogenic-type | 20,244 | 17.8% | 1.37 (1.29–1.44) |
+| Taiyin / Qi-Xue — reversible medical ICU stays | 25,695 | 6.6% | 0.66 (0.62–0.70) |
+| Unclassified (Ref) | 32,911 | 6.4% | 1.00 |
+
+*Western-TCM bridging: "Re Jue" = 热厥 = vasoplegic septic shock with hyperinflammation; "Shaoyin" = 少阴 = cold/non-vasoplegic shock (cardiogenic or late-sepsis). See [Case Study](docs/assets/case_study_rejue_trajectory.html).*
+
+<br>
 
 | Weapon | File | Purpose |
 |--------|------|---------|
-| **1. Clinical Impact Chart** | [`docs/assets/rejue_vs_shaoyin_comparison.png`](docs/assets/rejue_vs_shaoyin_comparison.png) | 热厥 vs 少阴 V-λ 对比图 — "哪个阈值先破？" |
-| **2. Single-Case Trajectory** | [`docs/assets/case_study_rejue_trajectory.html`](docs/assets/case_study_rejue_trajectory.html) | 单病例HTML战场沙盘（ECharts四图+临床时间线） |
-> **Open `case_study_rejue_trajectory.html` in any browser — zero dependencies, self-contained ECharts CDN.**
-> The trajectory shows Re Jue detected 12 hours before SOFA≥2 increase, while lactate was still 2.2 mmol/L.
+| **1. Comparison Chart** | [`docs/assets/rejue_vs_shaoyin_comparison.png`](docs/assets/rejue_vs_shaoyin_comparison.png) | Re Jue vs Shaoyin V-λ trajectory — "Which threshold breaks first?" |
+| **2. Single-Case Trajectory** | [`docs/assets/case_study_rejue_trajectory.html`](docs/assets/case_study_rejue_trajectory.html) | ECharts 4-panel + clinical timeline; zero-dependency browser view |
+> **Open `case_study_rejue_trajectory.html` in any browser**. The trajectory shows Re Jue detected 12 hours before SOFA≥2 increase, while lactate was still 2.2 mmol/L.
 
 ## 📂 Repository Structure
 ```

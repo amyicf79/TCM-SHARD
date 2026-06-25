@@ -31,11 +31,13 @@ This document defines the canonical module map, interface contracts, security bo
 | M07 | `IXNO-scribe` | LLM Secretary | 🟢 Open | None | Generates text (clinical notes, patient education, dialogue). No clinical logic permitted. |
 | M08 | `IXNO-Dashboard` | Visualizer | 🟡 Interface | M01–M04 | Renders S(t) field state, risk derivatives, syndrome trends. Style customizable per hospital. |
 | **L4** | **Validation Layer** | | | | *Empirical Proof* |
-| M00 | `TCM-SHARD` | Empirical Shell | 🟢 Open | M03, M04 | Validated on 85,242 MIMIC-III ICU stays. Heat Collapse: mortality 32.5%, aHR 2.30 (95% CI 2.16–2.45). Open-source on GitHub. |
+| M00 | `TCM-SHARD` | Empirical Shell (Septic-Shock Phenotyping) | 🟢 Open | M03, M04 | Validated on 85,242 MIMIC-III ICU stays. Heat Collapse (vasoplegic septic shock): mortality 32.5%, aHR 2.30 vs Shaoyin (non-vasoplegic) aHR 1.37. TCM-aligned syndrome labels are secondary mapping layer over primary septic-shock phenotyping. Open-source on GitHub. |
 | **L5** | **Ops Layer** | | | | *Governance* |
 | M09 | `IXNO-Console` | License Hub | 🔒 Closed | All | Manages auth tokens, audit logs, parameter calibration, and module authorization. |
 
 ---
+
+> **Note**: While TCM-SHARD uses TCM-syndrome labels (Re Jue / Shaoyin) for clinical interpretability, its primary contribution is **septic-shock subphenotyping** validated against MIMIC-III mortality outcomes. TCM alignment is a secondary translational layer.
 
 ## 3. Security & Boundaries (The "No Escape" Clause)
 
