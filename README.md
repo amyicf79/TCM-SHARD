@@ -14,6 +14,7 @@
 ![MIMIC-III v1.4](https://img.shields.io/badge/MIMIC--III-v1.4-orange.svg)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)
 ![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)
+[![Under Review](https://img.shields.io/badge/CCM-Under%20Review-gold.svg)](https://github.com/amyicf79/TCM-SHARD)
 
 > **Key Finding**: Analyzing 85,242 ICU stays from MIMIC-III, we identified a distinct high-mortality septic-shock subphenotype—**Heat Collapse (Re Jue, 热厥)**—within patients conventionally labeled "yangming-type". This subphenotype carried 32.5% mortality (adjusted HR 2.30, 95% CI 2.16–2.45), independent of age and sex, vs 17.8% (aHR 1.37) for non-vasoplegic shock (Shaoyin, 少阴). Rule-based mapping hit 61.4% with 63.3% manual agreement; ICD mining supports expanding to diabetic/kidney phenotypes.
 
