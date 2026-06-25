@@ -299,7 +299,7 @@ def plot_pca_space(model_data, mimic_results=None, save_path=None):
 
     # 13个锚点 — 纯证实心圆, 杂证(三层嵌套)空心圆
     MIXED_CODES = {"kj_qys_001", "qy_tr_002", "qx_yt_003"}
-    colors = plt.cm.tab10(np.linspace(0, 1, 13))
+    colors = plt.cm.tab10(np.linspace(0, 1, len(model_data["coords"])))
     for i, (code, v) in enumerate(model_data["coords"].items()):
         is_mixed = code in MIXED_CODES
         marker_style = 'o'
